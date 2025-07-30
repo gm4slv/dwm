@@ -10,8 +10,8 @@ static const unsigned int systrayspacing = 2;   /* systray spacing */
 static const int systraypinningfailfirst = 1;   /* 1: if pinning fails, display systray on the first monitor, False: display systray on the last monitor*/
 static const int showsystray        = 1;        /* 0 means no systray */
 static const int showbar            = 1;        /* 0 means no bar */
-static const int topbar             = 1;        /* 0 means bottom bar */
-static const int user_bh            = 30;        /* 0 measn that dwm will calculate bar, =>1 means dwm will user_bh as bar height */
+static const int topbar             = 0;        /* 0 means bottom bar */
+static const int user_bh            = 35;        /* 0 measn that dwm will calculate bar, =>1 means dwm will user_bh as bar height */
 static const char *fonts[]          = { "DejaVuSansMono NFM:size=12:style=Book" };
 static const char dmenufont[]       = "DejaVuSansMono NFM:size=12:style=Book";
 static const char col_gray1[]       = "#222222";
@@ -39,6 +39,7 @@ static const Rule rules[] = {
        { "Gimp",    NULL,     NULL,           0,         1,          0,           0,        -1 },
        { "Firefox", NULL,     NULL,           1 << 8,    0,          0,          -1,        -1 },
        { "st-256color",      NULL,     NULL,           0,         0,          1,           0,        -1 },
+       { "Xfce4-terminal",       NULL,     NULL,           0,         0,          1,           0,        -1 }, 
        { "URxvt",       NULL,     NULL,           0,         0,          1,           0,        -1 }, 
        { NULL,      NULL,     "Event Tester", 0,         0,          0,           1,        -1 }, /* xev */
 
@@ -71,11 +72,11 @@ static const Layout layouts[] = {
 /* commands */
 static char dmenumon[2] = "0"; /* component of dmenucmd, manipulated in spawn() */
 static const char *dmenucmd[] = { "dmenu_run", "-m", dmenumon, "-fn", dmenufont, "-nb", col_gray1, "-nf", col_gray3, "-sb", col_cyan, "-sf", col_gray4, NULL };
-static const char *termcmd[]  = { "urxvt", NULL };
+static const char *termcmd[]  = { "xfce4-terminal","--hide-scrollbar", NULL };
 static const char scratchpadname[] = "scratchpad";
 static const char *scratchpadcmd[] = { "urxvt", "-title", scratchpadname, "-g", "120x24", NULL, NULL };
 static const char *firefoxcmd[]  = { "firefox", NULL };
-static const char *lockcmd[]  = { "i3lock", "-e", NULL };
+static const char *lockcmd[]  = { "i3lock", "-i", "/home/g4slv/lock.png", NULL };
 
 static const Key keys[] = {
 	/* modifier                     key        function        argument */
