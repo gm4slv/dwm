@@ -76,6 +76,8 @@ static const char scratchpadname[] = "scratchpad";
 static const char *scratchpadcmd[] = { "urxvt", "-title", scratchpadname, "-g", "120x24", NULL, NULL };
 static const char *firefoxcmd[]  = { "firefox", NULL };
 static const char *lockcmd[]  = { "i3lock", "-i", "/home/g4slv/lock.png", NULL };
+static const char *notescmd[]  = { "dmenu_notes", NULL };
+static const char *screenshotcmd[]  = { "screenshot", NULL };
 
 static const Key keys[] = {
 	/* modifier                     key        function        argument */
@@ -88,6 +90,8 @@ static const Key keys[] = {
 	/* change to MOD-b */
 	/*{ MODKEY|ShiftMask,             XK_f, 	   spawn,          {.v = firefoxcmd } },*/
 	{ MODKEY,             XK_b, 	   spawn,          {.v = firefoxcmd } },
+	{ MODKEY,             XK_n, 	   spawn,          {.v = notescmd } },
+	{ 0   ,             XK_Print, 	   spawn,          {.v = screenshotcmd } },
 	{ MODKEY|ShiftMask,             XK_l, 	   spawn,          {.v = lockcmd } },
 	
 	{ MODKEY,                       XK_grave,  togglescratch,  {.v = scratchpadcmd } },
