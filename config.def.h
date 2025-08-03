@@ -75,7 +75,7 @@ static const char *termcmd[]  = { "urxvt", NULL };
 static const char scratchpadname[] = "scratchpad";
 static const char *scratchpadcmd[] = { "urxvt", "-title", scratchpadname, "-g", "120x24", NULL, NULL };
 static const char *firefoxcmd[]  = { "firefox", NULL };
-static const char *lockcmd[]  = { "i3lock", "-i", "/home/g4slv/lock.png", NULL };
+static const char *lockcmd[]  = { "slock", NULL };
 static const char *notescmd[]  = { "dmenu_notes", NULL };
 static const char *screenshotcmd[]  = { "screenshot", NULL };
 
